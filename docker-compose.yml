@@ -1,0 +1,17 @@
+version: '3.0'
+
+services:
+  front:
+    container_name: front
+    depends_on:
+      - back
+    image: ghcr.io/ulyssedahiez/front:latest
+    ports:
+      - "8080:80"
+
+  back:
+    container_name: back
+    image: ghcr.io/ulyssedahiez/back:latest
+    ports:
+      - "3000:3000"
+
